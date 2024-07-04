@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscribe Button</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <style>
+    .subcribe-button{
+      border: none;
+      background-color: black;
+      color:white;
+      font-weight: bold;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
+      border-radius: 50px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .is-subscribed{
+      border: none;
+      background-color: rgb(240, 240, 240);
+      color:rgb(0, 0, 0);
+      font-weight: bold;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
+      border-radius: 50px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+
+    .subscribeButton{
+      background-color: white;
+      border: 1px solid;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 50px;
+      box-shadow: 10px 10px;
+    }
+
+    .arigato{
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      font-style: normal;
+      font-size: medium;
+    }
+    
+    body{
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    	background-size: 400% 400%;
+    	animation: gradient 15s ease infinite;
+    	height: 100vh;
+    }
+
+      @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+  </style>
+</head>
+<body>
+  
+<div class="subscribeButton">
+  <p class="arigato">
+    YouTube Subscribe Button
+  </p>
+
+  <button onclick=" subscribe() "
+            class="js-subscribe-button subcribe-button">
+    Subscribe</button>
+</div>
+
+<script>
+  
+function subscribe() {
+  const buttonElement = document.querySelector('.js-subscribe-button');
+      
+      if (buttonElement.innerText === 'Subscribe'){
+        buttonElement.innerText = 'Subscribed';
+        buttonElement.classList.add('is-subscribed');
+      }else {
+        buttonElement.innerText = 'Subscribe';
+        buttonElement.classList.remove('is-subscribed');
+      }
+}
+
+</script>
+
+</body>
+</html>
